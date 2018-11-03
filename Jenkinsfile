@@ -1,10 +1,13 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven_3_5_2' 
-    }
-    
+ 
     stages {
+        stage ('Install Tools') {
+            tools {
+                maven 'Maven_3_5_2' 
+             }
+        }
+        
         stage ('Compile Stage') {
 
             steps {
