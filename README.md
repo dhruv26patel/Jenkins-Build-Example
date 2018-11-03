@@ -66,7 +66,10 @@ Below are the two added sections in the pom.xml file for the Jenkins to poll rea
     </distributionManagement>
     
 ```
-**NOTE**: If you do use https://mymavenrepo.com please make sure that you enable **HTTP AUTH** because you don't want to keep the endpoint open and wake up to multiple request and used to store data by other users. 
+**NOTE about pom.xml**: If you do use https://mymavenrepo.com please make sure that you enable **HTTP AUTH** because you don't want to keep the endpoint open and wake up to multiple request and used to store data by other users. 
+
+# Screenshot of the Jenkins build: 
+<img width="884" alt="screen shot 2018-11-03 at 11 02 29 am" src="https://user-images.githubusercontent.com/7026931/47954420-03e11980-df58-11e8-96cc-a924c362cbd3.png">
 
 # NOTE
 Since this is a maven project and to run the 'mvn' command I first had to specify in the MAVEN_HOME in Global Tool Configuration which is refrenced by 'Maven_3_5_2'. Simar to maven you will also need to add 'JDK' is installed using 'JAVA_HOME'. If you are on Windows insted of 'sh' you will have o run the batch command to work will be 'bat' 
