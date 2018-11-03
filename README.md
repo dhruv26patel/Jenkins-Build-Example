@@ -47,5 +47,26 @@ pipeline {
 4. **Stage**: Thie stage can consist of steps that contains command for execution
 5. **Steps**: Contains more than one steps to execute.
 
+# Explanation pom.xml file
+Below are the two added sections in the pom.xml file for the Jenkins to poll read the poll the project and build the SNAPSHOT that was created and uploaded along with the metadata.xml. I have used the https://mymavenrepo.com which allows you to create an endpoint to for the to delpoy the SNAPSHOT and metadata. 
+**Edit**: Add your 'Read-Key' and 'Write-Key' below: 
+```
+    <repositories>
+        <repository>
+            <id>myMavenRepo.read</id>
+            <url>https://mymavenrepo.com/repo/<Read-Key>/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/<Write-Key>/</url>
+        </repository>
+    </distributionManagement>
+    
+```
+**NOTE**: If you do use https://mymavenrepo.com please make sure that you enable **HTTP AUTH** because you don't want to keep the endpoint open and wake up to multiple request and used to store data by other users. 
+
 # NOTE
 Since this is a maven project and to run the 'mvn' command I first had to specify in the MAVEN_HOME in Global Tool Configuration which is refrenced by 'Maven_3_5_2'. Simar to maven you will also need to add 'JDK' is installed using 'JAVA_HOME'. If you are on Windows insted of 'sh' you will have o run the batch command to work will be 'bat' 
